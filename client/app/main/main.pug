@@ -1,0 +1,13 @@
+header#banner.hero-unit
+  .container
+    img(src='assets/images/sangfor-logo.png', alt="I'm Sangfor")
+    hr
+    p.lead IAM SELF REGISTER PAGE USING IAM API
+.container
+  .row
+    .col-lg-12
+      h1.page-header Features:
+      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(*ngFor='let thing of awesomeThings')
+        li
+          a([tooltip]='thing.info')
+            | {{thing.name}}
