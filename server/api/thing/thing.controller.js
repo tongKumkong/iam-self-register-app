@@ -28,7 +28,7 @@ export function create(req, res) {
         "random": ranString,
         "md5": md5(IAM_shareSecret + ranString),
         "name": req.body.username,
-    //    "extend": {
+        "extend": {
             "self_pass": {
                 "enable": true,
                 "password": req.body.password,
@@ -37,7 +37,7 @@ export function create(req, res) {
             "custom_cfg": {
                 "id-card": req.body.idCard
             }
-    //    }
+        }
     };
 
     console.log(newUser);
