@@ -24,6 +24,9 @@ export class MainComponent {
 
     Register(){
         console.log(this.user);
+        this.http.post('/api/things',this.user).subscribe(user => {
+            console.log(user);
+        });
     }
 
     
