@@ -3,11 +3,17 @@ header#banner.hero-unit
     img(src='assets/images/sangfor-logo.png', alt="I'm Sangfor")
     hr
     p.lead IAM SELF REGISTER PAGE USING IAM API
+br
 .container
-  .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(*ngFor='let thing of awesomeThings')
-        li
-          a([tooltip]='thing.info')
-            | {{thing.name}}
+  form
+    label Username
+      input.form-control(type='text', [(ngModel)]='user.username', name='username')
+    br
+    label Password
+      input.form-control(type='text', [(ngModel)]='user.password', name='password')
+    br
+    label ID card
+      input.form-control(type='text', [(ngModel)]='user.idCard', name='password')
+  br
+  button.btn.btn-primary(type='submit', (click)='Register()') Register
+  hr

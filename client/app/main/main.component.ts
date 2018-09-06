@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface Thing {
+interface User {
     name: string;
-    info?: string;
+    idCard: string;
+    password: string;
 }
 
 @Component({
@@ -11,10 +12,9 @@ interface Thing {
     template: require('./main.pug'),
     styles: [require('./main.styl')],
 })
-export class MainComponent implements OnInit {
+export class MainComponent {
 
-    awesomeThings: Thing[] = [];
-
+    user = {};
 
     static parameters = [HttpClient];
     constructor(private http: HttpClient) {
@@ -22,7 +22,8 @@ export class MainComponent implements OnInit {
 
     }
 
-    ngOnInit() {
+    Register(){
+        console.log(this.user);
     }
 
     

@@ -32,7 +32,8 @@ const appRoutes: Routes = [{ path: '',
 
         RouterModule.forRoot(appRoutes, { enableTracing: process.env.NODE_ENV === 'development' }),
         MainModule,
-        DirectivesModule,
+        DirectivesModule
+
     ],
     declarations: [
         AppComponent,
