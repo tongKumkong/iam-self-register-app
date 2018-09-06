@@ -14,7 +14,11 @@ interface User {
 })
 export class MainComponent {
 
-    user = {};
+    user = {
+        added: false
+    };
+
+    message = {};
 
     static parameters = [HttpClient];
     constructor(private http: HttpClient) {
@@ -22,12 +26,12 @@ export class MainComponent {
 
     }
 
-    Register(){
-        console.log(this.user);
-        this.http.post('/api/things',this.user).subscribe(user => {
-            console.log(user);
+    Register() {
+        this.http.post('/api/things', this.user).subscribe(response => {
+            this.message = response;
+            this.user = {
+                added: true
+            };
         });
     }
-
-    
 }

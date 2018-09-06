@@ -8,7 +8,7 @@ var http = require('request');
 
 // Config IAM_shareSecret here
 const IAM_shareSecret = '123';
-const IAM_API = 'http://192.200.241.91:9999/v1/';
+const IAM_API = 'http://10.251.251.251:9999/v1/';
 
 // Gets a list of Things
 export function create(req, res) {
@@ -28,7 +28,7 @@ export function create(req, res) {
         "random": ranString,
         "md5": md5(IAM_shareSecret + ranString),
         "name": req.body.username,
-  //      "extend": {
+    //    "extend": {
             "self_pass": {
                 "enable": true,
                 "password": req.body.password,

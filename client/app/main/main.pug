@@ -16,4 +16,7 @@ br
       input.form-control(type='text', [(ngModel)]='user.idCard', name='idCard')
   br
   button.btn.btn-primary(type='submit', (click)='Register()') Register
+  br
+  p.help-block([hidden]='!user.added')
+    | {{message}}
   hr
