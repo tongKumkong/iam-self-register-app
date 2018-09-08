@@ -41,14 +41,15 @@ export function create(req, res) {
     };
 
     console.log(newUser);
-    var iamAns = http.post(
-        IAM_API + 'user',
-        {
-            form: newUser,
-            headers: {
-                "Content-Type": "application/json"
-            }
 
+    var iamAns = http.post(
+        {
+            url: IAM_API + 'user',
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            json: newUser
         }
         , function (err, httpResponse, body) {
             if(err){
